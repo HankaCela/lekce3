@@ -147,9 +147,9 @@ const name = prompt("Zadejte vaše jméno:");
 const age = Number(prompt("Zadejte váš věk:"));
 const language = window.navigator.language;
 const person = {
-            name: name,
-            age: age,
-            language: language
+        name: 'Květoslav Voňavý',
+        age: 67,
+        language: language
             };
                         
 document.body.innerHTML += `<h1>Registrace na očkování</h1>
