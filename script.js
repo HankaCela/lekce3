@@ -4,7 +4,7 @@ const pocetHodin = promt("Zadej pocet hodin zaměstnance", "160")
 const premie = promt("Zadej mimoradnou odmenu v Kc")
 const plat = hodinovka * pocetHodin
 
-document.body.innerHTML = "<p>Pepa Novak si vydelal: " + plat + " Kc.<p>"
+document.body.innerHTML += "<p>Pepa Novak si vydelal: " + plat + " Kc.<p>"
 
 
 const hodinovka = 300
@@ -92,7 +92,7 @@ document.body.innerHTML += "<p>Kniha: " + kniha.nazev + ",autor: " + kniha.autor
         const mesto = apartment.city;
         const mestskaCast = apartment.district;
         apartment.status = 'taken';
-        document.body.innerHTML = `
+        document.body.innerHTML += `
             <h1>Informace o bytu</h1>
             <p><strong>Dispozice bytu:</strong> ${dispoziceBytu}</p>
             <p><strong>Čistý nájem (bez poplatků):</strong> ${cistyNajem} ${apartment.price.currency}</p>
@@ -101,3 +101,58 @@ document.body.innerHTML += "<p>Kniha: " + kniha.nazev + ",autor: " + kniha.autor
             </p>
             <p><strong>Město:</strong> ${mesto}, <strong>Městská část:</strong> ${mestskaCast}</p>
             <p><strong>Stav inzerátu:</strong> ${apartment.status}</p>`;
+
+
+//Knihovna            
+// Objekt pro první knihu
+                  const book1 = {
+                        title: "Hobit",
+                        author: "J.R.R. Tolkien",
+                        pages: 310,
+                        genre: "Fantasy",
+                        publishedYear: 1937,
+                        publisher: {
+                            name: "Allen & Unwin",
+                            location: "Londýn",
+                        },
+                        available: true
+                    };
+            
+                    // Objekt pro druhou knihu
+                    const book2 = {
+                        title: "1984",
+                        author: "George Orwell",
+                        pages: 328,
+                        genre: "Dystopie",
+                        publishedYear: 1949,
+                        publisher: {
+                            name: "Secker & Warburg",
+                            location: "Londýn",
+                        },
+                        available: false
+                    };
+            
+                    document.body.innerHTML += `
+                        <h1>Knihovna</h1>
+                        <h2>Kniha 1:</h2>
+                        <pre>${JSON.stringify(book1, null, 2)}</pre>
+                        <h2>Kniha 2:</h2>
+                        <pre>${JSON.stringify(book2, null, 2)}</pre>`;
+
+
+
+//Očkování – objekty
+                        
+const name = prompt("Zadejte vaše jméno:");
+const age = Number(prompt("Zadejte váš věk:"));
+const language = window.navigator.language;
+const person = {
+            name: name,
+            age: age,
+            language: language
+            };
+                        
+document.body.innerHTML += `<h1>Registrace na očkování</h1>
+                            <p><strong>Jméno:</strong> ${person.name}</p>
+                            <p><strong>Věk:</strong> ${person.age}</p>
+                            <p><strong>Preferovaný jazyk komunikace:</strong> ${person.language}</p>`;
